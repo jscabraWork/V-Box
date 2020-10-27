@@ -2,3 +2,26 @@
 
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+
+.contenedorPerfil{
+
+    height: 75vh;
+}
+
+
+
+.centrar
+{
+	padding-top: 50%;
+}
+.centrarMargen{
+	margin-top: 14%;
+}
+.letrasMoradas{
+	color: #73b52f;
+}
+.centrarTexto{
+
+	text-align: center;
+}
