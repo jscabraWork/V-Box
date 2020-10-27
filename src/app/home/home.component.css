@@ -1,0 +1,78 @@
+
+
+
+#prueba
+{
+	background-image: url("../../assets/img/Arriba.jpg");
+
+    padding: 100px;
+    text-align: center;
+	background-position: center center;
+	background-size: cover;
+	background-repeat: no-repeat;
+	position: relative;
+
+}
+
+.fondo5
+{
+	background-image: url("../../assets/img/fondo2.jpg");
+	background-position: center center;
+    padding: 7%;
+	background-attachment: fixed;
+	background-size: cover;
+		
+}
+
+.botonesA{
+    color: #73b52f;
+    background-color: white;
+    border: 5px;
+    border-radius: 20px;
+	border-color: #73b52f;
+}
+#prueba:before {
+	content:'';
+	position: absolute;
+        top: 0;
+	bottom: 0;
+	left: 0;
+    right: 0;
+    background: rgba(0, 0, 0, 0.70); 
+	
+}
+
+.fondoColor{
+	background-color: #b7dedf;
+}
+
+#prueba h1 {
+	font-size: 45px;
+	color: white;
+	position: relative
+}
+
+#prueba h2 {
+	font-size: 25px;
+	color: white;
+	position: relative
+}
+
+#prueba p {
+	font-size: 20px;
+	color: white;
+	position: relative
+}
+
+#prueba small {
+	font-size: 12px;
+	color: white;
+    position: relative
+    
+}
+
+#prueba button {
+	font-size: 18px;
+	
+    
+}

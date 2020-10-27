@@ -9,6 +9,10 @@ import { HomeComponent } from './home/home.component';
 import { RegistrarseComponent } from './registrarse/registrarse.component';
 import { FooterComponent } from './footer/footer.component';
 import { MatDialogModule } from '@angular/material/dialog';
+import { PerfilPersonaComponent } from './perfil-persona/perfil-persona.component';
+import { MenuComponent } from './menu/menu.component';
+import { PedidosComponent } from './pedidos/pedidos.component';
+import { RecetasComponent } from './recetas/recetas.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +20,11 @@ import { MatDialogModule } from '@angular/material/dialog';
     LoginComponent,
     HomeComponent,
     RegistrarseComponent,
-    FooterComponent
+    FooterComponent,
+    PerfilPersonaComponent,
+    MenuComponent,
+    PedidosComponent,
+    RecetasComponent
   ],
   imports: [
     BrowserModule,

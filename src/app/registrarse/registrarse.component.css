@@ -1,0 +1,28 @@
+.botonesLargos{
+    width:100%;
+    background-color:#73b52f ; 
+	color:white  ;
+}
+.botonCuentaNueva{
+    width: 70%;
+    background-color:white; 
+	color:#73b52f  ;
+	border-color: #73b52f;
+	border-width: 2px;
+}
+h1{
+    font-size: 28px;
+}
+.tamaño{
+    font-size: 23px;
+}
+
+.botonesCerrar{
+	background-color:white; 
+	color:#73b52f  ;
+	
+	
+}
+small{
+    color:gray;
+}

@@ -6,9 +6,24 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 
 .contenedorPerfil{
 
-    height: 75vh;
+    height: 78.15vh;
 }
+.titulos
+{
+	
+	color:black;
+	text-align: center;
+	font-family: latoB;
+	font-size: 34px;
 
+}
+.frase 
+{
+	text-align: center;
+	margin-top: 300px; 
+	margin-bottom: 300px;
+	
+}
 
 
 .centrar
@@ -24,4 +39,14 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 .centrarTexto{
 
 	text-align: center;
+}
+.titulosA
+{
+	
+	color:black;
+	text-align: center;
+	font-family: latoB;
+	font-size: 25px;
+	color: #73b52f;
+
 }
