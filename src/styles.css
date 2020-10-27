@@ -24,6 +24,13 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 	margin-bottom: 300px;
 	
 }
+.botonPedir{
+    width: 20%;
+	background: linear-gradient(rgba(15, 146, 48, 0.87), rgb(64, 170, 14)); 
+	
+	color:white  ;
+    font-size: 20px;
+}
 
 
 .centrar
@@ -31,7 +38,7 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 	padding-top: 50%;
 }
 .centrarMargen{
-	margin-top: 14%;
+	margin-top: 4%;
 }
 .letrasMoradas{
 	color: #73b52f;
@@ -49,4 +56,11 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 	font-size: 25px;
 	color: #73b52f;
 
+}
+
+
+.contenido{
+    position: relative;
+    min-height: 69vh ;
+    
 }

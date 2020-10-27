@@ -1,3 +1,9 @@
+import { OrderListComponent } from './order-list/order-list.component';
+import { OrdersComponent } from './orders/orders.component';
+import { environment } from './../environments/environment';
+import { AngularFirestoreModule } from '@angular/fire/firestore';
+import { AngularFireModule } from '@angular/fire';
+import { ReactiveFormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
@@ -24,14 +30,19 @@ import { RecetasComponent } from './recetas/recetas.component';
     PerfilPersonaComponent,
     MenuComponent,
     PedidosComponent,
-    RecetasComponent
+    RecetasComponent,
+    OrdersComponent,
+    OrderListComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     MatDialogModule,
     BrowserAnimationsModule,
-    MatIconModule
+    MatIconModule,
+    ReactiveFormsModule,
+    AngularFireModule.initializeApp(environment.firebaseConfig),
+    AngularFirestoreModule
   ],
   providers: [],
   bootstrap: [AppComponent]

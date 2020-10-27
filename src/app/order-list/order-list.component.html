@@ -1,0 +1,47 @@
+<section class="container centrarMargen">
+  <div class="row">
+    <div class="col-12">
+      <table class="border rounded table shadow-lg">
+        <thead>
+          <tr>
+            <th class="border">Order No.</th>
+            <th class="border">Name</th>
+            <th class="border">Coffee List</th>
+          </tr>
+        </thead>
+      
+        <tbody>
+          <tr *ngFor="let order of coffeeOrders" class="border">
+            <td class="border">
+              {{ order.payload.doc.data().orderNumber }}
+            </td>
+            <td class="border">{{ order.payload.doc.data().customerName }}</td>
+            <td class="border">
+              <span *ngFor="let coffee of order.payload.doc.data().coffeeOrder">
+                {{ coffee }}
+              </span>
+            </td>
+            <td class="border"
+              [hidden]="order.payload.doc.data().completed"
+              (click)="markCompleted(order)"
+            >
+              <i class="material-icons">check</i>
+            </td>
+            <td
+              [hidden]="order.payload.doc.data().completed"
+              (click)="deleteOrder(order)"
+            >
+              <i class="material-icons">delete_forever</i>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="col-12 centrarTexto ">
+      <button class="botonPedir border rounded shadow-lg pt-2 pb-2 " (click) ="openDialog()"><strong>Crear Pedido</strong></button>
+    </div>
+  </div>
+</section>
+
+
