@@ -271,7 +271,7 @@
                 <div class="form-group">
                     
                     <input name="email" required type="text" id="email"
-                        class="form-control" placeholder="Correo Electronico">
+                        class="form-control" placeholder="Correo Electronico" #userEmail required>
                 </div>
 
 
@@ -285,12 +285,12 @@
                 <div class="form-group">
                     
                     <input name="Password" required type="password" id="Password"
-                        class="form-control" placeholder="Contraseña">
+                        class="form-control" placeholder="Contraseña" #userPwd required>
                 </div>
              
              
                 <div class="form-group">
-                      <button   class="btn botonesLargos mt-3">
+                      <button   class="btn botonesLargos mt-3" (click)="authService.SignUp(userEmail.value, userPwd.value)">
                             Registrarse
                     </button> 
                 </div>

@@ -3,6 +3,7 @@ import { OrdersComponent } from './orders/orders.component';
 import { environment } from './../environments/environment';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { AngularFireModule } from '@angular/fire';
+import { AngularFireAuthModule } from '@angular/fire/auth';
 import { ReactiveFormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { BrowserModule } from '@angular/platform-browser';
@@ -19,6 +20,8 @@ import { PerfilPersonaComponent } from './perfil-persona/perfil-persona.componen
 import { MenuComponent } from './menu/menu.component';
 import { PedidosComponent } from './pedidos/pedidos.component';
 import { RecetasComponent } from './recetas/recetas.component';
+import { AuthService } from "./shared/auth.service";
+
 
 @NgModule({
   declarations: [
@@ -41,10 +44,11 @@ import { RecetasComponent } from './recetas/recetas.component';
     BrowserAnimationsModule,
     MatIconModule,
     ReactiveFormsModule,
-    AngularFireModule.initializeApp(environment.firebaseConfig),
-    AngularFirestoreModule
+    AngularFireModule.initializeApp(environment.firebaseConfig,'V-Box'),
+    AngularFirestoreModule,
+    AngularFireAuthModule
   ],
-  providers: [],
+  providers: [AuthService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

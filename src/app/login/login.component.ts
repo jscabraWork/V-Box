@@ -2,6 +2,8 @@ import { RegistrarseComponent } from './../registrarse/registrarse.component';
 
 import { Component, OnInit } from '@angular/core';
 import {MatDialog} from '@angular/material/dialog';
+import { AuthService } from "../shared/auth.service";
+
 
 @Component({
   selector: 'app-login',
@@ -10,7 +12,7 @@ import {MatDialog} from '@angular/material/dialog';
 })
 export class LoginComponent implements OnInit {
 
-  constructor(public dialog: MatDialog) { }
+  constructor(public dialog: MatDialog,public authService: AuthService) { }
 
   ngOnInit(): void {
   }

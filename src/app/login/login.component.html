@@ -17,19 +17,20 @@
                 </div>      
                 <form ngNoForm>
                     <div class="form-group">                  
-                        <input name="usuario" required type="text" id="usuario"
-                            class="form-control" placeholder="Usuario">
+                        <input name="usuario" required type="email" id="usuario"
+                            class="form-control" placeholder="Correo" #email required>
                     </div>
 
 
                     <div class="form-group">                    
                         <input name="Password" required type="password" id="Password"
-                            class="form-control" placeholder="Contraseña">
+                            class="form-control" placeholder="Contrasenia" #userPassword required>
                     </div>
                 
                 
                     <div class="form-group">
-                        <button   routerLink="/perfil/user" class="btn  botonesLargos mt-1 rounded">
+                        <button class="btn  botonesLargos mt-1 rounded" 
+                        (click)="authService.SignIn(email.value, userPassword.value)">
                                 Login
                         </button> 
                     </div>
@@ -39,7 +40,7 @@
                 </div>
                 <hr>
                 <div class="centrarTexto">
-                    <button   class="btn   mt-3 mb-5 rounded botonCuentaNueva rounded"  (click)="openDialog()" >
+                    <button class="btn mt-3 mb-5 rounded botonCuentaNueva rounded"  (click)="openDialog()" >
                         Crear cuenta nueva
                     </button>  
                     

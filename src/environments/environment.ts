@@ -5,14 +5,14 @@
 export const environment = {
   production: false,
   firebaseConfig: {
-    apiKey: "AIzaSyDJroEfFln1T9P6tq2WItR0FNo0afmYA9Q",
-    authDomain: "vbox-bbf5b.firebaseapp.com",
-    databaseURL: "https://vbox-bbf5b.firebaseio.com",
-    projectId: "vbox-bbf5b",
-    storageBucket: "vbox-bbf5b.appspot.com",
-    messagingSenderId: "437983971950",
-    appId: "1:437983971950:web:7adcfb3a6ca2d56b35347f",
-    measurementId: "G-P1XTLTQZLZ"
+    apiKey: "AIzaSyArUd5APJ6UUGuNz7g8SUhHc7PT_yckUuA",
+    authDomain: "vbox-pmc.firebaseapp.com",
+    databaseURL: "https://vbox-pmc.firebaseio.com",
+    projectId: "vbox-pmc",
+    storageBucket: "vbox-pmc.appspot.com",
+    messagingSenderId: "463488162758",
+    appId: "1:463488162758:web:e0f080e24f7a871b3070c7",
+    measurementId: "G-7NC4BZ3BGT" 
   }
 };
 
