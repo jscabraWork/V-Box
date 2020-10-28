@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-
+import { AuthService } from "../shared/auth.service";
 @Component({
   selector: 'app-perfil-persona',
   templateUrl: './perfil-persona.component.html',
@@ -7,8 +7,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PerfilPersonaComponent implements OnInit {
 
-  constructor() { }
-
+  constructor(public authService : AuthService) { }
+  usuario;
   ngOnInit(): void {
   }
 
