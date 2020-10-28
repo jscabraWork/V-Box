@@ -1,32 +1,31 @@
-
-<mat-icon class="float-right rounded pt-2 pb-2 pl-3 pr-3 botonesCerrar" mat-button mat-dialog-close> cancel_presentation</mat-icon>
+<mat-icon class="float-right rounded pt-2 pb-2 pl-3 pr-3 botonesCerrar" mat-button mat-dialog-close> cancel_presentation
+</mat-icon>
 <section class="container-fluid">
     <div class="row">
         <div class="col-12 fondoBlanco shadow-lg rounded p-5">
-            
+
             <div class="centrarTexto">
 
                 <h1 class="titulosA letrasMoradas"> <strong>Registrate</strong></h1>
                 <h5 class="tamaño"><strong>Unete a nuestra comunidad global</strong></h5>
             </div>
-                 
-      
-            
-            <form ngNoForm   class="mt-4">
+
+
+
+            <form ngNoForm class="mt-4">
                 <div class="form-group">
-                    <input name="nombreC" required type="text" id="nombreC"
-                        class="form-control" placeholder="Nombre">
+                    <input name="nombreC" required type="text" id="nombreC" class="form-control" placeholder="Nombre">
                 </div>
                 <div class="form-group">
-                    
-                    <input name="apellido" required type="text" id="apellido"
-                        class="form-control" placeholder="Apellidos">
+
+                    <input name="apellido" required type="text" id="apellido" class="form-control"
+                        placeholder="Apellidos">
                 </div>
-                 <div class="form-group">
-                    
+                <div class="form-group">
+
                     <select name="pais" class="form-control" id="pais">
                         <option value="">País</option>
-                         <option value="Afganistán" id="AF">Afganistán</option>
+                        <option value="Afganistán" id="AF">Afganistán</option>
                         <option value="Albania" id="AL">Albania</option>
                         <option value="Alemania" id="DE">Alemania</option>
                         <option value="Andorra" id="AD">Andorra</option>
@@ -94,14 +93,16 @@
                         <option value="Estados Unidos" id="US">Estados Unidos</option>
                         <option value="Estonia" id="EE">Estonia</option>
                         <option value="c" id="ET">Etiopía</option>
-                        <option value="Ex-República Yugoslava de Macedonia" id="MK">Ex-República Yugoslava de Macedonia</option>
+                        <option value="Ex-República Yugoslava de Macedonia" id="MK">Ex-República Yugoslava de Macedonia
+                        </option>
                         <option value="Filipinas" id="PH">Filipinas</option>
                         <option value="Finlandia" id="FI">Finlandia</option>
                         <option value="Francia" id="FR">Francia</option>
                         <option value="Gabón" id="GA">Gabón</option>
                         <option value="Gambia" id="GM">Gambia</option>
                         <option value="Georgia" id="GE">Georgia</option>
-                        <option value="Georgia del Sur y las islas Sandwich del Sur" id="GS">Georgia del Sur y las islas Sandwich del Sur</option>
+                        <option value="Georgia del Sur y las islas Sandwich del Sur" id="GS">Georgia del Sur y las islas
+                            Sandwich del Sur</option>
                         <option value="Ghana" id="GH">Ghana</option>
                         <option value="Gibraltar" id="GI">Gibraltar</option>
                         <option value="Granada" id="GD">Granada</option>
@@ -209,7 +210,8 @@
                         <option value="República Centroafricana" id="CF">República Centroafricana</option>
                         <option value="República Checa" id="CZ">República Checa</option>
                         <option value="República de Sudáfrica" id="ZA">República de Sudáfrica</option>
-                        <option value="República Democrática del Congo Zaire" id="CD">República Democrática del Congo Zaire</option>
+                        <option value="República Democrática del Congo Zaire" id="CD">República Democrática del Congo
+                            Zaire</option>
                         <option value="República Dominicana" id="DO">República Dominicana</option>
                         <option value="Reunión" id="RE">Reunión</option>
                         <option value="Ruanda" id="RW">Ruanda</option>
@@ -242,7 +244,8 @@
                         <option value="Taiwán" id="TW">Taiwán</option>
                         <option value="Tanzania" id="TZ">Tanzania</option>
                         <option value="Tayikistán" id="TJ">Tayikistán</option>
-                        <option value="Territorios británicos del océano Indico" id="IO">Territorios británicos del océano Indico</option>
+                        <option value="Territorios británicos del océano Indico" id="IO">Territorios británicos del
+                            océano Indico</option>
                         <option value="Territorios franceses del sur" id="TF">Territorios franceses del sur</option>
                         <option value="Timor Oriental" id="TP">Timor Oriental</option>
                         <option value="Togo" id="TG">Togo</option>
@@ -263,46 +266,37 @@
                         <option value="Yemen" id="YE">Yemen</option>
                         <option value="Zambia" id="ZM">Zambia</option>
                         <option value="Zimbabue" id="ZW">Zimbabue</option>
-                   </select>
+                    </select>
                 </div>
 
 
 
                 <div class="form-group">
-                    
-                    <input name="email" required type="text" id="email"
-                        class="form-control" placeholder="Correo Electronico" #userEmail required>
+                    <input type="email" class="form-control" placeholder="Email Address" #userEmail required>
                 </div>
 
-
                 <div class="form-group">
-                  
-                    <input name="usuario" required type="text" id="usuario"
-                        class="form-control" placeholder="Usuario">
+
+                    <input name="usuario" required type="text" id="usuario" class="form-control" placeholder="Usuario">
                 </div>
 
+                <div class="form-group">
+                    <input type="password" class="formControl" placeholder="Password" #userPwd required>
+                </div>
 
                 <div class="form-group">
-                    
-                    <input name="Password" required type="password" id="Password"
-                        class="form-control" placeholder="Contraseña" #userPwd required>
-                </div>
-             
-             
-                <div class="form-group">
-                      <button   class="btn botonesLargos mt-3" (click)="authService.SignUp(userEmail.value, userPwd.value)">
-                            Registrarse
-                    </button> 
+                    <button class="btn botonesLargos mt-3" (click)="authService.SignUp(userEmail.value, userPwd.value)">
+                        Registrarse
+                    </button>
                 </div>
             </form>
             <small>
-                Al hacer clic en "Registrarse", Aceptas nuestro terminos, condiciones y nuestra politica de tratamiento de datos.
-                       </small>
-            
+                Al hacer clic en "Registrarse", Aceptas nuestro terminos, condiciones y nuestra politica de tratamiento
+                de datos.
+            </small>
+
         </div>
-       
+
 
     </div>
 </section>
-
-       
