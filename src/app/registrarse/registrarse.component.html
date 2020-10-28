@@ -285,10 +285,14 @@
                 </div>
 
                 <div class="form-group">
-                    <button class="btn botonesLargos mt-3" (click)="authService.SignUp(userEmail.value, userPwd.value)">
-                        Registrarse
-                    </button>
+                    <input type="objetive_meat" class="form-control" placeholder="Porcentaje de carne objetivo" #userOM required>
                 </div>
+
+                <div class="form-group">
+                    <input type="button" class="btn botonesLargos mt-3" value="Registrarse"
+                        (click)="authService.SignUp(userEmail.value, userPwd.value, userOM.value)">
+                </div>
+
             </form>
             <small>
                 Al hacer clic en "Registrarse", Aceptas nuestro terminos, condiciones y nuestra politica de tratamiento
