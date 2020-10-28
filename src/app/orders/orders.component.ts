@@ -13,15 +13,15 @@ export class OrdersComponent implements OnInit {
   ngOnInit() {}
 
   coffees = [
-    "Americano",
-    "Flat White",
-    "Cappuccino",
-    "Latte",
-    "Espresso",
-    "Machiato",
-    "Mocha",
-    "Hot Chocolate",
-    "Tea"
+    "Emeral Dal",
+    "Broccoli Quinoa Cakes",
+    "Summer Tomato Risotto with Saffron",
+    "Nasi Goreng",
+    "Orecchite Pasta with Broccoli Sauce",
+    "Roasted Chile Rellenos",
+    "Farmers Market Vegetarian Enchiladas",
+    "Mushroom Wellington with Rosemary and Pecans",
+    "Garam Masala"
   ];
 
   coffeeOrder = [];
