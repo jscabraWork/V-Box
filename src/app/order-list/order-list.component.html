@@ -6,7 +6,7 @@
           <tr>
             <th class="border">Order No.</th>
             <th class="border">Name</th>
-            <th class="border">Coffee List</th>
+            <th class="border">Meal List</th>
           </tr>
         </thead>
       
@@ -18,7 +18,7 @@
             <td class="border">{{ order.payload.doc.data().customerName }}</td>
             <td class="border">
               <span *ngFor="let coffee of order.payload.doc.data().coffeeOrder">
-                {{ coffee }}
+                {{ coffee }}<br/>
               </span>
             </td>
             <td class="border"
