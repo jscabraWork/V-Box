@@ -3,6 +3,7 @@ import { RegistrarseComponent } from './../registrarse/registrarse.component';
 import { Component, OnInit } from '@angular/core';
 import {MatDialog} from '@angular/material/dialog';
 import { AuthService } from "../shared/auth.service";
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -30,8 +31,5 @@ export class LoginComponent implements OnInit {
       
     });
   }
-
-  
-  
 
 }
