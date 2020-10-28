@@ -1,5 +1,36 @@
 <app-menu></app-menu>
 <section class="contenido">
-
+    <div class="row">
+        <div class="col-12">
+            <table class="border rounded table shadow-lg">
+                <thead>
+                        <th class="border">Profile</th>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="border">
+                            <mat-icon style="font-size: 100px">person</mat-icon>
+                        </td>
+                        <td class ="border">
+                            Nombre: {{usuario.name}}
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="border">
+                            Pedidos: {{usuario.order}}
+                        </td>
+                        <td class="border">
+                            Metodo de pago: {{usuario.payment}}
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="border">
+                            Nivel actual: {{usuario.dieta}}
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
    
 </section>
