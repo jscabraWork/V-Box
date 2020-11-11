@@ -8,7 +8,6 @@ import { Observable } from 'rxjs/Observable';
 
 export class RecetasService {
 
-  recipesCollection: AngularFirestoreCollection<IRecipe>;
   recipes: Observable<IRecipe[]>;
 
   constructor(

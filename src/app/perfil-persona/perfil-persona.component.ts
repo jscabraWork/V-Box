@@ -16,13 +16,16 @@ export class PerfilPersonaComponent implements OnInit {
   isSignedIn = false
 
   ngOnInit(): void {
-    if(this.authService.isLoggedIn) {
-      this.userService.getUser(this.authService.uid).subscribe(user => {
+    this.logIn();
+  }
+
+  async logIn() {
+    if(await this.authService.isLoggedIn) {
+      await this.userService.getUser(this.authService.uid).subscribe(user => {
         this.user = user
       })
     } else {
-      this.router.navigate(['home']);
-
+      await this.router.navigate(['home']);
     }
   }
 }

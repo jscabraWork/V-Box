@@ -24,15 +24,9 @@ export class OrderListComponent implements OnInit {
     });
   }
   ngOnInit() {
-    this.getCoffeeOrders();
   }
 
   coffeeOrders;
-
-  getCoffeeOrders = () =>
-    this.ordersService
-      .getCoffeeOrders()
-      .subscribe(res => (this.coffeeOrders = res));
 
   deleteOrder = data => this.ordersService.deleteCoffeeOrder(data);
 

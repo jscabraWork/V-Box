@@ -30,7 +30,6 @@ export class UsersService {
 
   getUser(uid) {
     this.user = this.firestore.collection('users').doc(uid).valueChanges();
-    console.log(this.user);
     return this.user;
   }
 }

@@ -20,9 +20,13 @@ export class RecetasComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    this.recetasService.getRecipes().subscribe(recipes => {
-      this.recipes = recipes; 
-    })
+    this.logIn();
+  }
+
+  async logIn() {
+    await this.recetasService.getRecipes().subscribe(recipes => {
+      this.recipes = recipes;
+    });
   }
 
 }

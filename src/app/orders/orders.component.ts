@@ -1,6 +1,8 @@
 import { Component, OnInit } from "@angular/core";
 import { NgForm } from "@angular/forms";
-import { OrdersService } from "../shared/orders.service";
+import { Router } from '@angular/router';
+import { AuthService } from '../shared/auth.service';
+import { IOrder, OrdersService } from "../shared/orders.service";
 
 @Component({
   selector: "app-orders",
@@ -8,9 +10,23 @@ import { OrdersService } from "../shared/orders.service";
   styleUrls: ["./orders.component.scss"]
 })
 export class OrdersComponent implements OnInit {
-  constructor(public ordersService: OrdersService) {}
+  constructor(public ordersService: OrdersService, public authService: AuthService, public router: Router) {}
 
-  ngOnInit() {}
+  orders: IOrder[];
+
+  ngOnInit() {
+    this.logIn();
+  }
+
+  async logIn() {
+    if(await this.authService.isLoggedIn) {
+      this.ordersService.getOrdersById(this.authService.uid).subscribe(orders => {
+        this.orders = orders; 
+      })
+    } else {
+      this.router.navigate(['home']);
+    }
+  }
 
   coffees = [
     "Emeral Dal",

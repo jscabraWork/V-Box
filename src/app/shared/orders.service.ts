@@ -1,11 +1,16 @@
 import { Injectable } from "@angular/core";
 import { FormControl, FormGroup } from "@angular/forms";
 import { AngularFirestore } from "@angular/fire/firestore";
+import { Observable } from 'rxjs/Observable';
+import { flatMap } from 'rxjs/operators';
 
 @Injectable({
   providedIn: "root"
 })
 export class OrdersService {
+
+  orders: Observable<IOrder[]>;
+
   constructor(private firestore: AngularFirestore) {}
 
   form = new FormGroup({
@@ -32,8 +37,9 @@ export class OrdersService {
       .set({ completed: true }, { merge: true });
   }
 
-  getCoffeeOrders() {
-    return this.firestore.collection("coffeeOrders").snapshotChanges();
+  getOrdersById(uid) {
+    this.orders= this.firestore.collection('orders', ref=> ref.where('userId', '==', uid)).valueChanges();
+    return this.orders;
   }
 
   deleteCoffeeOrder(data) {
@@ -42,4 +48,10 @@ export class OrdersService {
       .doc(data.payload.doc.id)
       .delete();
   }
+}
+
+export interface IOrder {
+  date?:string;
+  userId?:string;
+  recipeId?:string;
 }

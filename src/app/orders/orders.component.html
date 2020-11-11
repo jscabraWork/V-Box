@@ -1,35 +1,46 @@
-<h5>Meal Order:</h5>
-<form [formGroup]="this.ordersService.form">
-  <input
-    placeholder="Customer Name"
-    formControlName="customerName"
-    type="text"
-    class="input-field col s12"
-  />
+<section class="container centrarMargen">
+  <div class="row">
+    <div class="col-12">
+      <table class="border rounded table shadow-lg">
+        <thead>
+          <tr>
+            <th class="border">Order No.</th>
+            <th class="border">Name</th>
+            <th class="border">Meal List</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let order of orders" class="border">
+            <td class="border">
+              {{ order.id }}
+            </td>
+            <td class="border">{{ order.userId }}</td>
+            <td class="border">
+              {{ order.recipeId }}
+            </td>
+            <td class="border"
+              [hidden]="order.payload.doc.data().completed"
+              (click)="markCompleted(order)"
+            >
+              <i class="material-icons">check</i>
+            </td>
+            <td
+              [hidden]="order.payload.doc.data().completed"
+              (click)="deleteOrder(order)"
+            >
+              <i class="material-icons">delete_forever</i>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
 
-  <input
-    class="input-field col s12"
-    placeholder="Order Number"
-    formControlName="orderNumber"
-    type="number"
-  />
-
-  <button
-    class="waves-effect waves-light btn col s4"
-    *ngFor="let coffee of coffees"
-    (click)="addCoffee(coffee)"
-  >
-    {{ coffee }}
-  </button>
-
-  <ul class="collection">
-    <li *ngFor="let coffee of coffeeOrder">
-      <span class="col s11"> {{ coffee }} </span
-      ><a class="col s1" (click)="removeCoffee(coffee)">x</a>
-    </li>
-  </ul>
-
-  <button class="waves-effect waves-light btn col s12" (click)="onSubmit()">
-    Submit
-  </button>
-</form>
+    <div class="col-12 centrarTexto ">
+      <button class="botonPedir border rounded shadow-lg pt-2 pb-2 " (click) ="openDialog()"><strong>Crear Pedido</strong></button>
+    </div>
+  </div>
+</section>
+<ng-template #noOrders>
+  <hr>
+  <h5>No hay órdenes</h5>
+</ng-template>
