@@ -4,7 +4,7 @@ import { environment } from './../environments/environment';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { AngularFireModule } from '@angular/fire';
 import { AngularFireAuthModule } from '@angular/fire/auth';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
@@ -21,6 +21,8 @@ import { MenuComponent } from './menu/menu.component';
 import { PedidosComponent } from './pedidos/pedidos.component';
 import { RecetasComponent } from './recetas/recetas.component';
 import { AuthService } from "./shared/auth.service";
+import { NgbModule } from "@ng-bootstrap/ng-bootstrap";
+import { RecetasService } from './shared/recetas.service';
 
 
 @NgModule({
@@ -39,6 +41,9 @@ import { AuthService } from "./shared/auth.service";
   ],
   imports: [
     BrowserModule,
+    FormsModule,
+    ReactiveFormsModule,
+    NgbModule,
     AppRoutingModule,
     MatDialogModule,
     BrowserAnimationsModule,
@@ -48,7 +53,7 @@ import { AuthService } from "./shared/auth.service";
     AngularFirestoreModule,
     AngularFireAuthModule
   ],
-  providers: [AuthService],
+  providers: [AuthService, RecetasService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

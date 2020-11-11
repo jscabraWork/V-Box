@@ -11,6 +11,7 @@ import { Router } from "@angular/router";
 
 export class AuthService {
   userData: any; // Save logged in user data
+  uid:string;
 
   constructor(
     public afs: AngularFirestore,   // Inject Firestore service
@@ -24,6 +25,7 @@ export class AuthService {
     this.afAuth.authState.subscribe(user => {
       if (user) {
         this.userData = user;
+        this.uid=user.uid;
         localStorage.setItem('user', JSON.stringify(this.userData));
         JSON.parse(localStorage.getItem('user'));
       } else {
@@ -40,7 +42,8 @@ export class AuthService {
         this.ngZone.run(() => {
           this.router.navigate(['perfil/user']);
         });
-        this.getUserData(result.user.uid)
+        this.uid=result.user.uid;
+        this.setUserData(this.uid)
       }).catch((error) => {
         window.alert(error.message)
       })
@@ -83,7 +86,7 @@ export class AuthService {
   // Returns true when user is looged in and email is verified
   get isLoggedIn(): boolean {
     const user = JSON.parse(localStorage.getItem('user'));
-    return (user !== null && user.emailVerified !== false) ? true : false;
+    return (user !== null) ? true : false;
   }
 
   // Sign in with Google
@@ -120,8 +123,13 @@ export class AuthService {
 
   /* Returns user data by id
   */
-  getUserData(uid){
+  setUserData(uid){
     this.userData = this.afs.doc(`users/${uid}`);
+    return this.userData;
+  }
+
+  getUserData(){
+    return this.userData;
   }
 
   /* Setting up user data when sign in with username/password, 
@@ -138,7 +146,7 @@ export class AuthService {
   SignOut() {
     return this.afAuth.signOut().then(() => {
       localStorage.removeItem('user');
-      this.router.navigate(['sign-in']);
+      this.router.navigate(['home']);
     })
   }
 

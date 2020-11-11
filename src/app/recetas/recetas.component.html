@@ -1,5 +1,16 @@
 <app-menu></app-menu>
 <section class="contenido">
-
-    
+    <div *ngIf="recipes?.length > 0;else noRecipes">
+        <ul *ngFor="let recipe of recipes" class="collection">
+            <li class="collection-recipe">
+                {{recipe.name}}
+            </li>
+            <img src={{recipe.imageurl}} alt={{recipe.name}}>
+        </ul>
+    </div>
 </section>
+
+<ng-template #noRecipes>
+    <hr>
+    <h5>No hay recetas</h5>
+</ng-template>
